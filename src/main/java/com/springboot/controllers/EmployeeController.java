@@ -17,23 +17,7 @@ import com.springboot.service.EmployeeService;
 @RestController
 @RequestMapping(value = "SpringBootEmployee2/companies")
 public class EmployeeController {
-	
-	@Autowired
-	EmployeeService employeeService;
-
-	@GetMapping(value="/employees")
-	public List<EmployeeDetails> getEmployee() {
-		return employeeService.getEmployee();
-	}	
-	@GetMapping(value="{comp_Id}/employees/{id}")
-	public EmployeeDetails getEmployeebyId( @PathVariable("id") int id) {
-		return employeeService.getEmployeebyId(id);
-	}
-	@PostMapping
-	public List<EmployeeDetails> createEmployee(@RequestBody EmployeeDetails user) {
-		return employeeService.createemp(user);	
-	}
-	@PutMapping(value = "{comp_Id}/employees/{id}")
+	ue = "{comp_Id}/employees/{id}")
 	public List<EmployeeDetails> updateEmployee(@RequestBody EmployeeDetails user, @PathVariable("id") int id) {
 		return employeeService.updateemp(user,id);		
 	}

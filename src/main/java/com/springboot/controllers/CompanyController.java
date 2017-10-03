@@ -20,10 +20,7 @@ public class CompanyController {
 	@Autowired
 	CompanyService CompanyService;
 
-	@GetMapping
-	public List<Company> getCompany() {
-		return CompanyService.getCompany();
-	}	
+	
 	@GetMapping(value="{id}")
 	public Company getCompanybyId( @PathVariable("id") int id) {
 		return CompanyService.getCompanybyId(id);
@@ -33,10 +30,7 @@ public class CompanyController {
 		return CompanyService.createcmp(user);
 		
 	}
-	@PutMapping(value = "{id}")
-	public List<Company> updateEmployee(@RequestBody Company user, @PathVariable("id") int id) {
-		return CompanyService.updatecmp(user,id);		
-	}
+	
 	@DeleteMapping(value = "{id}")
 	public List<Company> deleteCompany(@PathVariable("id") int id) {
 		return CompanyService.deletecmp(id);
